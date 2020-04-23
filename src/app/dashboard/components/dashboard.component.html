@@ -1,0 +1,27 @@
+<div class="row fixed-page-title">
+  <div class="col-sm-6 col-xs-12">
+    <h4 class="page_title">TO DO LIST</h4>
+  </div>
+</div>
+
+<div class="row body-content">
+  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+    <div class="panel panel-default">
+   
+      <mat-form-field >
+        <mat-label>Autosize textarea</mat-label>
+        <textarea matInput
+        [(ngModel)]="noteValue"
+       
+                  cdkTextareaAutosize
+                  #autosize="cdkTextareaAutosize"
+                  cdkAutosizeMinRows="1"
+                  cdkAutosizeMaxRows="5"></textarea>
+      </mat-form-field>
+
+
+
+
+    </div>
+  </div>
+</div>

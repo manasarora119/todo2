@@ -1,0 +1,42 @@
+<ul class="nav sidebar-nav" role="tablist" aria-multiselectable="false">
+  <div class="visible-xs">
+        <div style="margin: 10px;">
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="Search"  (keyup)="getvalue($event)"  value="">
+          </mat-form-field>
+      
+        </div>
+  </div>
+  <mat-radio-group
+  aria-labelledby="example-radio-group-label"
+  class="example-radio-group"
+  [(ngModel)]="favoriteSeason">
+  <mat-radio-button class="example-radio-button" *ngFor="let option of data" [value]="option" (click)="navigate(option)">
+   <div >
+    
+    
+    <div style="text-transform: capitalize;     font-size: 18px;
+    font-weight: bold" >
+      {{ option.value }}
+    </div>
+   
+ Updated at :   {{ option.time | date:'h:mm:ss a' }} 
+
+
+  
+   </div>
+  </mat-radio-button>
+</mat-radio-group>
+  <hr
+    class="break-line"
+    style="border-color: #dbdbdb;margin-bottom: 10px;"
+    class="visible-xs visible-sm"
+  />
+  <li
+    routerLinkActive="active"
+    [routerLinkActiveOptions]="{ exact: true }"
+    class="visible-xs visible-sm"
+  >
+  </li>
+</ul>
+
