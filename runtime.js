@@ -61,7 +61,7 @@
 /******/
 /******/ 	// script path function
 /******/ 	function jsonpScriptSrc(chunkId) {
-/******/ 		return __webpack_require__.p + "" + ({"app-core-core-module~app-dashboard-dashboard-module":"app-core-core-module~app-dashboard-dashboard-module","app-core-core-module":"app-core-core-module","app-dashboard-dashboard-module":"app-dashboard-dashboard-module"}[chunkId]||chunkId) + ".js"
+/******/ 		return __webpack_require__.p + "" + ({"app-dashboard-dashboard-module":"app-dashboard-dashboard-module"}[chunkId]||chunkId) + ".js"
 /******/ 	}
 /******/
 /******/ 	// The require function
