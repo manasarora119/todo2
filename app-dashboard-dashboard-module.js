@@ -18,7 +18,7 @@ module.exports = "<div class=\"row fixed-page-title\">\n  <div class=\"col-sm-6 
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".dashboard {\n  color: #fff; }\n\n.textarea {\n  margin: 10px;\n  resize: none; }\n"
+module.exports = ".dashboard {\n  color: #fff; }\n\n.textarea {\n  margin: 10px;\n  resize: none; }\n\n.mat-form-field {\n  width: 100%;\n  padding: 10px; }\n"
 
 /***/ }),
 
@@ -64,38 +64,73 @@ var DashboardComponent = /** @class */ (function () {
         this.route.paramMap.subscribe(function (params) {
             _this.id = Number(params['params']['id']);
             console.log(params['params']['id'], " parmasssss");
+            var data = JSON.parse(localStorage.getItem("data")) || [];
+            var checkUsername = function (obj) { return obj.id === _this.id; };
+            if (data.some(checkUsername)) {
+                var obj = data.find(function (o, i) {
+                    if (o.id === _this.id) {
+                        _this.noteValue = o.value;
+                        return true; // stop searching
+                    }
+                });
+            }
         });
         this.emailBroadcastListner = this.broadcast.listen().subscribe(function (res) {
             setTimeout(function () {
-                console.log(JSON.parse(localStorage.getItem("data")), _this.id);
                 if (res.event.name === 'save') {
                     _this.router.navigate(["/dashboard"]);
-                    var data = JSON.parse(localStorage.getItem("data")) || [];
-                    data.push({
-                        id: _this.id,
-                        value: _this.noteValue || "Default Hello"
-                    });
-                    localStorage.setItem("data", JSON.stringify(data));
+                    var data_1 = JSON.parse(localStorage.getItem("data")) || [];
+                    var checkUsername = function (obj) { return obj.id === _this.id; };
+                    if (data_1.some(checkUsername)) {
+                        var obj = data_1.find(function (o, i) {
+                            if (o.id === _this.id) {
+                                // this.noteValue = o.value;
+                                data_1[i] = { id: _this.id, value: _this.noteValue, time: new Date().valueOf() };
+                                return true; // stop searching
+                            }
+                        });
+                    }
+                    else {
+                        data_1.push({
+                            id: _this.id,
+                            time: new Date().valueOf(),
+                            value: _this.noteValue || "Default Hello"
+                        });
+                    }
+                    localStorage.setItem("data", JSON.stringify(data_1));
                     _this.noteValue = "";
-                    console.log(JSON.parse(localStorage.getItem("data")), _this.id);
                     _this.broadcast.publish({
                         name: 'getdata',
                     });
                 }
                 if (res.event.name === 'add') {
-                    var data = JSON.parse(localStorage.getItem("data")) || [];
-                    data.push({
-                        id: _this.id,
-                        value: _this.noteValue || "Default Hello"
-                    });
-                    localStorage.setItem("data", JSON.stringify(data));
-                    _this.id = _this.id + 1;
+                    var data_2 = JSON.parse(localStorage.getItem("data")) || [];
+                    console.log(JSON.parse(localStorage.getItem("counter")), "counter", res.event.name, _this.id);
+                    var checkUsername = function (obj) { return obj.id === _this.id; };
+                    if (data_2.some(checkUsername)) {
+                        var obj = data_2.find(function (o, i) {
+                            if (o.id === _this.id) {
+                                // this.noteValue = o.value;
+                                data_2[i] = { id: _this.id, value: _this.noteValue, time: new Date().valueOf() };
+                                return true; // stop searching
+                            }
+                        });
+                    }
+                    else {
+                        data_2.push({
+                            id: _this.id - 1,
+                            time: new Date().valueOf(),
+                            value: _this.noteValue || "Default Hello"
+                        });
+                    }
+                    localStorage.setItem("data", JSON.stringify(data_2));
+                    console.log("data", data_2);
+                    // this.id = this.id + 1
                     _this.router.navigate(["/dashboard/" + _this.id]);
                     _this.noteValue = "";
                     _this.broadcast.publish({
                         name: 'getdata',
                     });
-                    // this.user.user_email = res.event.data;
                 }
             }, 0);
         });

@@ -430,7 +430,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<header class=\"header\">\n  <nav class=\"header__nav\">\n    <div class=\"header__toggle-menu\">\n      <a href=\"javascript:\" class=\"icon\" left-menu-toggle (click)=\"toggleSidebar()\">\n        <i class=\"material-icons dlv-icon\" [ngClass]=\"collapseSidebar ? '' : 'active'\">menu</i>\n      </a>\n\n\n    </div>\n    <div class=\"header__brand\">\n      <div class=\"header__brand-img\">\n        <img class=\"logo-img\" alt=\"logo\" src=\"assets/images/logo.svg\" />\n      </div>\n      <div class=\"header__brand-text\">\n        <span class=\"header__brand-name\">TODO </span>\n        <br />\n\n      </div>\n\n\n\n    </div>\n    <div class=\"header__service-menu\">\n      <section>\n        <div class=\"example-button-row\">\n          <button mat-stroked-button (click)=\"saveTask()\">Save</button>\n        </div>\n      </section>\n    </div>\n    <div class=\"header__service-menu\">\n      <section>\n        <div class=\"example-button-row\">\n          <button mat-stroked-button (click)=\"addTask()\">ADD</button>\n        </div>\n      </section>\n    </div>\n    <div class=\"header__service-menu\">\n      <section>\n        <div class=\"example-button-row\">\n          <button mat-stroked-button (click)=\"deleteTask()\">Delete</button>\n        </div>\n      </section>\n    </div>\n\n    <div class=\"header__service-menu\">\n      <section>\n        <div class=\"example-button-row\">\n          \n          <mat-form-field class=\"example-full-width\">\n            <!-- <mat-label>Note </mat-label> -->\n            <input matInput placeholder=\"Search\"  (keyup)=\"getvalue($event)\"  value=\"\">\n          </mat-form-field>\n      \n        </div>\n      </section>\n    </div>\n\n    \n\n   \n\n\n\n    <div class=\"header__notifications\">\n      <i class=\"material-icons dlv-icon\">notifications</i>\n    </div>\n    <div class=\"header__profile hidden-sm\">\n      <!-- <delhivery-user-details\n        (onLogout)=\"goState()\"\n        [isMaterialView]=\"true\"\n      ></delhivery-user-details> -->\n    </div>\n  </nav>\n</header>\n<div>\n  <!-- <div class=\"menu_visible\" title [ngClass]=\"setLayout ? 'content-wrapper' : 'p-0'\"> -->\n  <div class=\"menu_visible content-wrapper\" title>\n    <div class=\"grey_background\"></div>\n    <div id=\"sidebar-wrapper\" [ngClass]=\"collapseSidebar ? 'collapsed' : ''\" (clickOutside)=\"closeSidebar($event)\">\n      <sidebar></sidebar>\n    </div>\n    <div class=\"content-area\" style=\"margin-top: 18px \">\n      <div class=\"container-fluid\">\n        <router-outlet></router-outlet>\n      </div>\n    </div>\n  </div>\n</div>"
+module.exports = "<header class=\"header\">\n  <nav class=\"header__nav\">\n    <div class=\"header__toggle-menu\">\n      <a href=\"javascript:\" class=\"icon\" left-menu-toggle (click)=\"toggleSidebar()\">\n        <i class=\"material-icons dlv-icon\" [ngClass]=\"collapseSidebar ? '' : 'active'\">menu</i>\n      </a>\n\n\n    </div>\n    <div class=\"header__brand\">\n      <div class=\"header__brand-img\">\n        <img class=\"logo-img\" alt=\"logo\" src=\"assets/images/logo.svg\" />\n      </div>\n      <div class=\"header__brand-text\">\n        <span class=\"header__brand-name\">TODO </span>\n        <br />\n\n      </div>\n\n\n\n    </div>\n    <div class=\"header__service-menu\">\n      <section>\n        <div class=\"example-button-row\">\n          <button mat-stroked-button (click)=\"saveTask()\">Save</button>\n        </div>\n      </section>\n    </div>\n    <div class=\"header__service-menu\">\n      <section>\n        <div class=\"example-button-row\">\n          <button mat-stroked-button (click)=\"addTask()\">ADD</button>\n        </div>\n      </section>\n    </div>\n    <div class=\"header__service-menu\">\n      <section>\n        <div class=\"example-button-row\">\n          <button mat-stroked-button (click)=\"deleteTask()\">Delete</button>\n        </div>\n      </section>\n    </div>\n\n    <div class=\"header__service-menu  header__notifications hidden-sm\">\n      <section>\n        <div class=\"example-button-row\">\n          <mat-form-field class=\"example-full-width\">\n            <input matInput placeholder=\"Search\"  (keyup)=\"getvalue($event)\"  value=\"\">\n          </mat-form-field>\n        </div>\n      </section>\n    </div>\n    <div class=\"header__notifications\">\n      <!-- <i class=\"material-icons dlv-icon\">notifications</i> -->\n    </div>\n    <div class=\"header__profile hidden-sm\">\n    </div>\n  </nav>\n</header>\n<div>\n  <div class=\"menu_visible content-wrapper\" title>\n    <div class=\"grey_background\"></div>\n    <div id=\"sidebar-wrapper\" [ngClass]=\"collapseSidebar ? 'collapsed' : ''\" (clickOutside)=\"closeSidebar($event)\">\n      <sidebar></sidebar>\n    </div>\n    <div class=\"content-area\" style=\"margin-top: 18px \">\n      <div class=\"container-fluid\">\n        <router-outlet></router-outlet>\n      </div>\n    </div>\n  </div>\n</div>"
 
 /***/ }),
 
@@ -489,7 +489,6 @@ var LayoutComponent = /** @class */ (function () {
     };
     LayoutComponent.prototype.ngOnInit = function () {
         this.count = 0;
-        localStorage.setItem("counter", JSON.stringify(this.count));
         this.count = JSON.parse(localStorage.getItem("counter"));
     };
     LayoutComponent.prototype.getvalue = function (e) {
@@ -500,6 +499,7 @@ var LayoutComponent = /** @class */ (function () {
     };
     LayoutComponent.prototype.addTask = function () {
         this.count = this.count + 1;
+        console.log(this.count, "this.count");
         localStorage.setItem("counter", JSON.stringify(this.count));
         this.router.navigate(["/dashboard/" + this.count]);
         this.broadcast.publish({
@@ -514,6 +514,15 @@ var LayoutComponent = /** @class */ (function () {
         });
     };
     LayoutComponent.prototype.deleteTask = function () {
+        var id = JSON.parse(localStorage.getItem("selected"));
+        var data = JSON.parse(localStorage.getItem("data"));
+        data = data.filter(function (obj) {
+            return obj.id !== id;
+        });
+        localStorage.setItem("data", JSON.stringify(data));
+        this.broadcast.publish({
+            name: 'getdata',
+        });
     };
     /**
      *
@@ -650,7 +659,7 @@ var LoginComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ul class=\"nav sidebar-nav\" role=\"tablist\" aria-multiselectable=\"false\">\n  <div class=\"mob-profile visible-xs visible-sm\">\n   \n  </div>\n  <!-- <li routerLinkActive=\"active\" [routerLinkActiveOptions]=\"{ exact: true }\">\n    <a [routerLink]=\"['/dashboard']\"> <i class=\"brick\"></i>Dashboard </a>\n  </li> -->\n  \n\n\n\n\n\n  <mat-radio-group\n  aria-labelledby=\"example-radio-group-label\"\n  class=\"example-radio-group\"\n  [(ngModel)]=\"favoriteSeason\">\n  <mat-radio-button class=\"example-radio-button\" *ngFor=\"let option of data\" [value]=\"option\">\n  \n\n    <a [routerLink]=\"['/dashboard/' + option.id]\"> <i class=\"brick\"></i>   {{ option.value }} </a>\n  \n\n  </mat-radio-button>\n</mat-radio-group>\n\n  \n  <hr\n    class=\"break-line\"\n    style=\"border-color: #dbdbdb;margin-bottom: 10px;\"\n    class=\"visible-xs visible-sm\"\n  />\n  <li\n    routerLinkActive=\"active\"\n    [routerLinkActiveOptions]=\"{ exact: true }\"\n    class=\"visible-xs visible-sm\"\n  >\n    \n  </li>\n</ul>\n"
+module.exports = "<ul class=\"nav sidebar-nav\" role=\"tablist\" aria-multiselectable=\"false\">\n  <div class=\"visible-xs\">\n        <div style=\"margin: 10px;\">\n          <mat-form-field class=\"example-full-width\">\n            <input matInput placeholder=\"Search\"  (keyup)=\"getvalue($event)\"  value=\"\">\n          </mat-form-field>\n      \n        </div>\n  </div>\n  <mat-radio-group\n  aria-labelledby=\"example-radio-group-label\"\n  class=\"example-radio-group\"\n  [(ngModel)]=\"favoriteSeason\">\n  <mat-radio-button class=\"example-radio-button\" *ngFor=\"let option of data\" [value]=\"option\" (click)=\"navigate(option)\">\n   <div >\n    \n    {{ option.time | date:'h:mm:ss a' }} \n    <br>\n    <div style=\"text-transform: capitalize;\">\n      {{ option.value }}\n    </div>\n  \n   </div>\n  </mat-radio-button>\n</mat-radio-group>\n  <hr\n    class=\"break-line\"\n    style=\"border-color: #dbdbdb;margin-bottom: 10px;\"\n    class=\"visible-xs visible-sm\"\n  />\n  <li\n    routerLinkActive=\"active\"\n    [routerLinkActiveOptions]=\"{ exact: true }\"\n    class=\"visible-xs visible-sm\"\n  >\n  </li>\n</ul>\n\n"
 
 /***/ }),
 
@@ -661,7 +670,7 @@ module.exports = "<ul class=\"nav sidebar-nav\" role=\"tablist\" aria-multiselec
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".sidebar-nav .mob-profile {\n  margin: 20px;\n  position: relative; }\n  .sidebar-nav .mob-profile p {\n    position: absolute;\n    font-weight: bold;\n    text-transform: capitalize;\n    display: inline-block;\n    left: 50px;\n    top: 3px;\n    margin-bottom: 5px;\n    text-transform: uppercase; }\n  .sidebar-nav .mob-profile p.text-hor {\n      padding: 8px 0px; }\n  .sidebar-nav li {\n  padding-left: 11px; }\n  .sidebar-nav li a {\n    line-height: 23px;\n    color: #696969; }\n  .sidebar-nav li a:hover, .sidebar-nav li a:focus {\n      background: transparent; }\n  .sidebar-nav li i.brick {\n    height: 25px;\n    width: 25px;\n    background: #a7aeb3;\n    margin-right: 15px; }\n  .sidebar-nav li.active {\n    margin-right: 15px;\n    background: #e8eaed !important;\n    border-bottom-right-radius: 5px;\n    border-top-right-radius: 5px; }\n  .sidebar-nav li.active a {\n      color: #262727;\n      border-bottom-right-radius: 5px;\n      border-top-right-radius: 5px; }\n  .sidebar-nav li.active a:hover {\n        background: transparent; }\n  .sidebar-nav li.active a:hover, .sidebar-nav li.active a:focus {\n        background: #e8eaed !important; }\n  .sidebar-nav li.active i.brick {\n      background: #262727; }\n  .sidebar-nav span.mat-ava {\n  border-radius: 50%;\n  background: red;\n  color: #fff;\n  font-weight: 600;\n  font-size: 15px;\n  display: inline-block;\n  height: 38px;\n  width: 38px;\n  line-height: 38px;\n  padding: 0 10px;\n  margin-right: 7px;\n  text-transform: uppercase; }\n  .mat-radio-button {\n  padding: 10px;\n  width: 100%; }\n"
+module.exports = ".sidebar-nav .mob-profile {\n  margin: 20px;\n  position: relative; }\n  .sidebar-nav .mob-profile p {\n    position: absolute;\n    font-weight: bold;\n    text-transform: capitalize;\n    display: inline-block;\n    left: 50px;\n    top: 3px;\n    margin-bottom: 5px;\n    text-transform: uppercase; }\n  .sidebar-nav .mob-profile p.text-hor {\n      padding: 8px 0px; }\n  .sidebar-nav li {\n  padding-left: 11px; }\n  .sidebar-nav li a {\n    line-height: 23px;\n    color: #696969; }\n  .sidebar-nav li a:hover, .sidebar-nav li a:focus {\n      background: transparent; }\n  .sidebar-nav li i.brick {\n    height: 25px;\n    width: 25px;\n    background: #a7aeb3;\n    margin-right: 15px; }\n  .sidebar-nav li.active {\n    margin-right: 15px;\n    background: #e8eaed !important;\n    border-bottom-right-radius: 5px;\n    border-top-right-radius: 5px; }\n  .sidebar-nav li.active a {\n      color: #262727;\n      border-bottom-right-radius: 5px;\n      border-top-right-radius: 5px; }\n  .sidebar-nav li.active a:hover {\n        background: transparent; }\n  .sidebar-nav li.active a:hover, .sidebar-nav li.active a:focus {\n        background: #e8eaed !important; }\n  .sidebar-nav li.active i.brick {\n      background: #262727; }\n  .sidebar-nav span.mat-ava {\n  border-radius: 50%;\n  background: red;\n  color: #fff;\n  font-weight: 600;\n  font-size: 15px;\n  display: inline-block;\n  height: 38px;\n  width: 38px;\n  line-height: 38px;\n  padding: 0 10px;\n  margin-right: 7px;\n  text-transform: uppercase; }\n  .mat-radio-button {\n  margin: 5%;\n  width: 100%; }\n"
 
 /***/ }),
 
@@ -719,8 +728,18 @@ var SidebarComponent = /** @class */ (function () {
             }
         });
     };
+    SidebarComponent.prototype.getvalue = function (e) {
+        this.broadcast.publish({
+            name: 'search',
+            data: e.target.value,
+        });
+    };
+    SidebarComponent.prototype.navigate = function (e) {
+        localStorage.setItem("selected", JSON.stringify(e.id));
+        this.router.navigate(['/dashboard/' + e.id]);
+    };
     SidebarComponent.prototype.updateLocalStorageData = function () {
-        this.data = JSON.parse(localStorage.getItem("data"));
+        this.data = JSON.parse(localStorage.getItem("data")).reverse();
         this.dataCopy = JSON.parse(JSON.stringify(this.data));
     };
     SidebarComponent.prototype.search = function (search) {
