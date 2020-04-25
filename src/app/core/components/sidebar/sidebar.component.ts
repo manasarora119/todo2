@@ -62,7 +62,7 @@ export class SidebarComponent implements OnInit {
     this.router.navigate(['/dashboard/' + e.id])
   }
   updateLocalStorageData() {
-    let data = JSON.parse(localStorage.getItem("data")) || [];
+    let data = JSON.parse(localStorage.getItem("data")) ||  [];
     this.data = data.reverse();
     this.dataCopy = JSON.parse(JSON.stringify(this.data))
   }
