@@ -457,8 +457,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SidebarComponent", function() { return SidebarComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
-/* harmony import */ var dlv_ng_auth__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! dlv-ng-auth */ "./node_modules/dlv-ng-auth/dlv-ng-auth.module.js");
-/* harmony import */ var _services__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../services */ "./src/app/core/services/index.ts");
+/* harmony import */ var _services__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../services */ "./src/app/core/services/index.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -471,13 +470,9 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
-
 var SidebarComponent = /** @class */ (function () {
-    function SidebarComponent(router, activeRoute, userServices, authService, broadcast) {
+    function SidebarComponent(router, broadcast) {
         this.router = router;
-        this.activeRoute = activeRoute;
-        this.userServices = userServices;
-        this.authService = authService;
         this.broadcast = broadcast;
         this.currentRoute = document.location.href;
         this.routes = [];
@@ -510,7 +505,8 @@ var SidebarComponent = /** @class */ (function () {
         this.router.navigate(['/dashboard/' + e.id]);
     };
     SidebarComponent.prototype.updateLocalStorageData = function () {
-        this.data = JSON.parse(localStorage.getItem("data")).reverse();
+        var data = JSON.parse(localStorage.getItem("data")) || [];
+        this.data = data.reverse();
         this.dataCopy = JSON.parse(JSON.stringify(this.data));
     };
     SidebarComponent.prototype.search = function (search) {
@@ -531,10 +527,7 @@ var SidebarComponent = /** @class */ (function () {
             styles: [__webpack_require__(/*! ./sidebar.component.scss */ "./src/app/core/components/sidebar/sidebar.component.scss")]
         }),
         __metadata("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"],
-            _angular_router__WEBPACK_IMPORTED_MODULE_1__["ActivatedRoute"],
-            dlv_ng_auth__WEBPACK_IMPORTED_MODULE_2__["UserService"],
-            dlv_ng_auth__WEBPACK_IMPORTED_MODULE_2__["AuthService"],
-            _services__WEBPACK_IMPORTED_MODULE_3__["BroadcastService"]])
+            _services__WEBPACK_IMPORTED_MODULE_2__["BroadcastService"]])
     ], SidebarComponent);
     return SidebarComponent;
 }());
