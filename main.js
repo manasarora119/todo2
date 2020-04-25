@@ -45,7 +45,7 @@ module.exports = webpackAsyncContext;
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<router-outlet></router-outlet>\n<!-- <loader ref=\"root\"></loader> -->"
+module.exports = "<router-outlet></router-outlet>"
 
 /***/ }),
 
@@ -262,139 +262,11 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./src/app/core/components/developer-guide/developer-guide.component.html":
-/*!********************************************************************************!*\
-  !*** ./src/app/core/components/developer-guide/developer-guide.component.html ***!
-  \********************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "<button type=\"button\" class=\"btn btn-primary dev-guide\" title=\"Developer Guide\" (click)=\"navigateToDocs()\">\n  <img src=\"/assets/images/developer-guide.png\" >\n</button>"
-
-/***/ }),
-
-/***/ "./src/app/core/components/developer-guide/developer-guide.component.scss":
-/*!********************************************************************************!*\
-  !*** ./src/app/core/components/developer-guide/developer-guide.component.scss ***!
-  \********************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = ".dev-guide {\n  position: fixed;\n  bottom: 40px;\n  right: 40px;\n  color: #FFF;\n  border-radius: 50%;\n  text-align: center;\n  padding: 15px;\n  box-shadow: 2px 2px 3px #999; }\n  .dev-guide img {\n    height: 30px; }\n"
-
-/***/ }),
-
-/***/ "./src/app/core/components/developer-guide/developer-guide.component.ts":
-/*!******************************************************************************!*\
-  !*** ./src/app/core/components/developer-guide/developer-guide.component.ts ***!
-  \******************************************************************************/
-/*! exports provided: DeveloperGuideComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DeveloperGuideComponent", function() { return DeveloperGuideComponent; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (undefined && undefined.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-var DeveloperGuideComponent = /** @class */ (function () {
-    function DeveloperGuideComponent() {
-    }
-    DeveloperGuideComponent.prototype.ngOnInit = function () {
-    };
-    DeveloperGuideComponent.prototype.navigateToDocs = function () {
-        window.open(window.location.origin + '/docs', '_blank');
-    };
-    DeveloperGuideComponent = __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
-            selector: 'developer-guide',
-            template: __webpack_require__(/*! ./developer-guide.component.html */ "./src/app/core/components/developer-guide/developer-guide.component.html"),
-            styles: [__webpack_require__(/*! ./developer-guide.component.scss */ "./src/app/core/components/developer-guide/developer-guide.component.scss")]
-        }),
-        __metadata("design:paramtypes", [])
-    ], DeveloperGuideComponent);
-    return DeveloperGuideComponent;
-}());
-
-
-
-/***/ }),
-
-/***/ "./src/app/core/components/forbidden/forbidden.component.html":
-/*!********************************************************************!*\
-  !*** ./src/app/core/components/forbidden/forbidden.component.html ***!
-  \********************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "<forbidden></forbidden>"
-
-/***/ }),
-
-/***/ "./src/app/core/components/forbidden/forbidden.component.scss":
-/*!********************************************************************!*\
-  !*** ./src/app/core/components/forbidden/forbidden.component.scss ***!
-  \********************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = ""
-
-/***/ }),
-
-/***/ "./src/app/core/components/forbidden/forbidden.component.ts":
-/*!******************************************************************!*\
-  !*** ./src/app/core/components/forbidden/forbidden.component.ts ***!
-  \******************************************************************/
-/*! exports provided: ForbiddenComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ForbiddenComponent", function() { return ForbiddenComponent; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (undefined && undefined.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-var ForbiddenComponent = /** @class */ (function () {
-    function ForbiddenComponent() {
-    }
-    ForbiddenComponent.prototype.ngOnInit = function () { };
-    ForbiddenComponent = __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
-            selector: "forbidden-page",
-            template: __webpack_require__(/*! ./forbidden.component.html */ "./src/app/core/components/forbidden/forbidden.component.html"),
-            styles: [__webpack_require__(/*! ./forbidden.component.scss */ "./src/app/core/components/forbidden/forbidden.component.scss")]
-        }),
-        __metadata("design:paramtypes", [])
-    ], ForbiddenComponent);
-    return ForbiddenComponent;
-}());
-
-
-
-/***/ }),
-
 /***/ "./src/app/core/components/index.ts":
 /*!******************************************!*\
   !*** ./src/app/core/components/index.ts ***!
   \******************************************/
-/*! exports provided: LayoutComponent, LoginComponent, SidebarComponent, ForbiddenComponent, DeveloperGuideComponent */
+/*! exports provided: LayoutComponent, SidebarComponent */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -402,20 +274,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _layout_layout_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./layout/layout.component */ "./src/app/core/components/layout/layout.component.ts");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "LayoutComponent", function() { return _layout_layout_component__WEBPACK_IMPORTED_MODULE_0__["LayoutComponent"]; });
 
-/* harmony import */ var _login_login_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./login/login.component */ "./src/app/core/components/login/login.component.ts");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "LoginComponent", function() { return _login_login_component__WEBPACK_IMPORTED_MODULE_1__["LoginComponent"]; });
-
-/* harmony import */ var _sidebar_sidebar_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./sidebar/sidebar.component */ "./src/app/core/components/sidebar/sidebar.component.ts");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "SidebarComponent", function() { return _sidebar_sidebar_component__WEBPACK_IMPORTED_MODULE_2__["SidebarComponent"]; });
-
-/* harmony import */ var _forbidden_forbidden_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./forbidden/forbidden.component */ "./src/app/core/components/forbidden/forbidden.component.ts");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ForbiddenComponent", function() { return _forbidden_forbidden_component__WEBPACK_IMPORTED_MODULE_3__["ForbiddenComponent"]; });
-
-/* harmony import */ var _developer_guide_developer_guide_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./developer-guide/developer-guide.component */ "./src/app/core/components/developer-guide/developer-guide.component.ts");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "DeveloperGuideComponent", function() { return _developer_guide_developer_guide_component__WEBPACK_IMPORTED_MODULE_4__["DeveloperGuideComponent"]; });
-
-
-
+/* harmony import */ var _sidebar_sidebar_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./sidebar/sidebar.component */ "./src/app/core/components/sidebar/sidebar.component.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "SidebarComponent", function() { return _sidebar_sidebar_component__WEBPACK_IMPORTED_MODULE_1__["SidebarComponent"]; });
 
 
 
@@ -430,7 +290,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<header class=\"header\">\n  <nav class=\"header__nav\">\n    <div class=\"header__toggle-menu\">\n      <a href=\"javascript:\" class=\"icon\" left-menu-toggle (click)=\"toggleSidebar()\">\n        <i class=\"material-icons dlv-icon\" [ngClass]=\"collapseSidebar ? '' : 'active'\">menu</i>\n      </a>\n\n\n    </div>\n    <div class=\"header__brand\">\n      <div class=\"header__brand-img\">\n        <img class=\"logo-img\" alt=\"logo\" src=\"assets/images/logo.svg\" />\n      </div>\n      <div class=\"header__brand-text\">\n        <span class=\"header__brand-name\">TODO </span>\n        <br />\n\n      </div>\n\n\n\n    </div>\n    <div class=\"header__service-menu\">\n      <section>\n        <div class=\"example-button-row\">\n          <button mat-stroked-button (click)=\"saveTask()\">Save</button>\n        </div>\n      </section>\n    </div>\n    <div class=\"header__service-menu\">\n      <section>\n        <div class=\"example-button-row\">\n          <button mat-stroked-button (click)=\"addTask()\">ADD</button>\n        </div>\n      </section>\n    </div>\n    <div class=\"header__service-menu\">\n      <section>\n        <div class=\"example-button-row\">\n          <button mat-stroked-button (click)=\"deleteTask()\">Delete</button>\n        </div>\n      </section>\n    </div>\n\n    <div class=\"header__service-menu  header__notifications hidden-sm\">\n      <section>\n        <div class=\"example-button-row\">\n          <mat-form-field class=\"example-full-width\">\n            <input matInput placeholder=\"Search\"  (keyup)=\"getvalue($event)\"  value=\"\">\n          </mat-form-field>\n        </div>\n      </section>\n    </div>\n    <div class=\"header__notifications\">\n      <!-- <i class=\"material-icons dlv-icon\">notifications</i> -->\n    </div>\n    <div class=\"header__profile hidden-sm\">\n    </div>\n  </nav>\n</header>\n<div>\n  <div class=\"menu_visible content-wrapper\" title>\n    <div class=\"grey_background\"></div>\n    <div id=\"sidebar-wrapper\" [ngClass]=\"collapseSidebar ? 'collapsed' : ''\" (clickOutside)=\"closeSidebar($event)\">\n      <sidebar></sidebar>\n    </div>\n    <div class=\"content-area\" style=\"margin-top: 18px \">\n      <div class=\"container-fluid\">\n        <router-outlet></router-outlet>\n      </div>\n    </div>\n  </div>\n</div>"
+module.exports = "<header class=\"header\">\n  <nav class=\"header__nav\">\n    <div class=\"header__toggle-menu\">\n      <a href=\"javascript:\" class=\"icon\" left-menu-toggle (click)=\"toggleSidebar()\">\n        <i class=\"material-icons dlv-icon\" [ngClass]=\"collapseSidebar ? '' : 'active'\">menu</i>\n      </a>\n    </div>\n    <div class=\"header__brand\">\n      <div class=\"header__brand-img\">\n        <img class=\"logo-img\" alt=\"logo\" src=\"assets/images/logo.svg\" />\n      </div>\n      <div class=\"header__brand-text\">\n        <span class=\"header__brand-name\">TODO </span>\n        <br />\n      </div>\n    </div>\n    <div class=\"header__service-menu\">\n      <section>\n        <div class=\"example-button-row\">\n          <button mat-stroked-button (click)=\"saveTask()\">Save</button>\n        </div>\n      </section>\n    </div>\n    <div class=\"header__service-menu\">\n      <section>\n        <div class=\"example-button-row\">\n          <button mat-stroked-button (click)=\"addTask()\">ADD</button>\n        </div>\n      </section>\n    </div>\n    <div class=\"header__service-menu\">\n      <section>\n        <div class=\"example-button-row\">\n          <button mat-stroked-button (click)=\"deleteTask()\">Delete</button>\n        </div>\n      </section>\n    </div>\n\n    <div class=\"header__service-menu  header__notifications hidden-sm\">\n      <section>\n        <div class=\"example-button-row\">\n          <mat-form-field class=\"example-full-width\">\n            <input matInput placeholder=\"Search\"  (keyup)=\"getvalue($event)\"  value=\"\">\n          </mat-form-field>\n        </div>\n      </section>\n    </div>\n    <div class=\"header__notifications\">\n    </div>\n    <div class=\"header__profile hidden-sm\">\n    </div>\n  </nav>\n</header>\n<div>\n  <div class=\"menu_visible content-wrapper\" title>\n    <div class=\"grey_background\"></div>\n    <div id=\"sidebar-wrapper\" [ngClass]=\"collapseSidebar ? 'collapsed' : ''\" (clickOutside)=\"closeSidebar($event)\">\n      <sidebar></sidebar>\n    </div>\n    <div class=\"content-area\" style=\"margin-top: 18px \">\n      <div class=\"container-fluid\">\n        <router-outlet></router-outlet>\n      </div>\n    </div>\n  </div>\n</div>"
 
 /***/ }),
 
@@ -470,7 +330,6 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
-// import { BroadcastService } from "src/app/core/services/broadcast.service";
 var MOBILE_SCREEN = 768;
 var LayoutComponent = /** @class */ (function () {
     function LayoutComponent(router, activatedRoute, broadcast) {
@@ -523,30 +382,11 @@ var LayoutComponent = /** @class */ (function () {
         this.broadcast.publish({
             name: 'getdata',
         });
+        localStorage.removeItem("selected");
     };
-    /**
-     *
-     * @description Method to get title and layout from Data sent when route changes.
-     * @var event : has Layout and title. Layout defines whether we need sidebar and navbar.
-     *  Title contains the title for page
-     *
-     **/
-    /**
-     *
-     *	@description Method to handle toggle of sidebar on clicking on bars
-     *
-     **/
     LayoutComponent.prototype.toggleSidebar = function () {
         this.collapseSidebar = !this.collapseSidebar;
         this.isCollapseSidebarOpen = true;
-    };
-    /**
-     *
-     * @description Method to handle scenario when center is changed
-     *
-     */
-    LayoutComponent.prototype.centerChange = function (data) {
-        location.reload();
     };
     LayoutComponent.prototype.goState = function () {
         location.reload();
@@ -583,75 +423,6 @@ var LayoutComponent = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "./src/app/core/components/login/login.component.html":
-/*!************************************************************!*\
-  !*** ./src/app/core/components/login/login.component.html ***!
-  \************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "<delhivery-login (onLogin)=\"onLogin($event)\"></delhivery-login>"
-
-/***/ }),
-
-/***/ "./src/app/core/components/login/login.component.scss":
-/*!************************************************************!*\
-  !*** ./src/app/core/components/login/login.component.scss ***!
-  \************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = ".login {\n  width: 100%;\n  height: 100vh;\n  background: #f5f5f5; }\n  .login .login-card {\n    width: 30%;\n    margin: 0 auto;\n    position: relative;\n    top: 15%;\n    background: #fff;\n    min-height: 60vh; }\n  .login .login-card .image-wrapper {\n      width: 100px; }\n  .login .login-card .image-wrapper .login_logo {\n        max-width: 100%; }\n"
-
-/***/ }),
-
-/***/ "./src/app/core/components/login/login.component.ts":
-/*!**********************************************************!*\
-  !*** ./src/app/core/components/login/login.component.ts ***!
-  \**********************************************************/
-/*! exports provided: LoginComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LoginComponent", function() { return LoginComponent; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
-var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (undefined && undefined.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-var LoginComponent = /** @class */ (function () {
-    function LoginComponent(router) {
-        this.router = router;
-    }
-    LoginComponent.prototype.ngOnInit = function () {
-    };
-    LoginComponent.prototype.onLogin = function (status) {
-        this.router.navigate(['dashboard'], { replaceUrl: true });
-    };
-    LoginComponent = __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
-            selector: 'login',
-            template: __webpack_require__(/*! ./login.component.html */ "./src/app/core/components/login/login.component.html"),
-            styles: [__webpack_require__(/*! ./login.component.scss */ "./src/app/core/components/login/login.component.scss")]
-        }),
-        __metadata("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"]])
-    ], LoginComponent);
-    return LoginComponent;
-}());
-
-
-
-/***/ }),
-
 /***/ "./src/app/core/components/sidebar/sidebar.component.html":
 /*!****************************************************************!*\
   !*** ./src/app/core/components/sidebar/sidebar.component.html ***!
@@ -659,7 +430,7 @@ var LoginComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ul class=\"nav sidebar-nav\" role=\"tablist\" aria-multiselectable=\"false\">\n  <div class=\"visible-xs\">\n        <div style=\"margin: 10px;\">\n          <mat-form-field class=\"example-full-width\">\n            <input matInput placeholder=\"Search\"  (keyup)=\"getvalue($event)\"  value=\"\">\n          </mat-form-field>\n      \n        </div>\n  </div>\n  <mat-radio-group\n  aria-labelledby=\"example-radio-group-label\"\n  class=\"example-radio-group\"\n  [(ngModel)]=\"favoriteSeason\">\n  <mat-radio-button class=\"example-radio-button\" *ngFor=\"let option of data\" [value]=\"option\" (click)=\"navigate(option)\">\n   <div >\n    \n    {{ option.time | date:'h:mm:ss a' }} \n    <br>\n    <div style=\"text-transform: capitalize;\">\n      {{ option.value }}\n    </div>\n  \n   </div>\n  </mat-radio-button>\n</mat-radio-group>\n  <hr\n    class=\"break-line\"\n    style=\"border-color: #dbdbdb;margin-bottom: 10px;\"\n    class=\"visible-xs visible-sm\"\n  />\n  <li\n    routerLinkActive=\"active\"\n    [routerLinkActiveOptions]=\"{ exact: true }\"\n    class=\"visible-xs visible-sm\"\n  >\n  </li>\n</ul>\n\n"
+module.exports = "<ul class=\"nav sidebar-nav\" role=\"tablist\" aria-multiselectable=\"false\">\n  <div class=\"visible-xs\">\n        <div style=\"margin: 10px;\">\n          <mat-form-field class=\"example-full-width\">\n            <input matInput placeholder=\"Search\"  (keyup)=\"getvalue($event)\"  value=\"\">\n          </mat-form-field>\n      \n        </div>\n  </div>\n  <mat-radio-group\n  aria-labelledby=\"example-radio-group-label\"\n  class=\"example-radio-group\"\n  [(ngModel)]=\"favoriteSeason\">\n  <mat-radio-button class=\"example-radio-button\" *ngFor=\"let option of data\" [value]=\"option\" (click)=\"navigate(option)\">\n   <div >\n    \n    \n    <div style=\"text-transform: capitalize;     font-size: 18px;\n    font-weight: bold\" >\n      {{ option.value }}\n    </div>\n   \n Updated at :   {{ option.time | date:'h:mm:ss a' }} \n\n\n  \n   </div>\n  </mat-radio-button>\n</mat-radio-group>\n  <hr\n    class=\"break-line\"\n    style=\"border-color: #dbdbdb;margin-bottom: 10px;\"\n    class=\"visible-xs visible-sm\"\n  />\n  <li\n    routerLinkActive=\"active\"\n    [routerLinkActiveOptions]=\"{ exact: true }\"\n    class=\"visible-xs visible-sm\"\n  >\n  </li>\n</ul>\n\n"
 
 /***/ }),
 
@@ -819,9 +590,6 @@ var CoreModule = /** @class */ (function () {
             declarations: [
                 _components__WEBPACK_IMPORTED_MODULE_7__["LayoutComponent"],
                 _components__WEBPACK_IMPORTED_MODULE_7__["SidebarComponent"],
-                _components__WEBPACK_IMPORTED_MODULE_7__["ForbiddenComponent"],
-                _components__WEBPACK_IMPORTED_MODULE_7__["LoginComponent"],
-                _components__WEBPACK_IMPORTED_MODULE_7__["DeveloperGuideComponent"]
             ],
             imports: [
                 _angular_common__WEBPACK_IMPORTED_MODULE_1__["CommonModule"],
@@ -834,7 +602,7 @@ var CoreModule = /** @class */ (function () {
                 _core_routes__WEBPACK_IMPORTED_MODULE_3__["CoreRoutesModule"]
             ],
             providers: [_services___WEBPACK_IMPORTED_MODULE_8__["BroadcastService"]],
-            entryComponents: [_components__WEBPACK_IMPORTED_MODULE_7__["DeveloperGuideComponent"]]
+            entryComponents: []
         })
     ], CoreModule);
     return CoreModule;
@@ -897,78 +665,6 @@ var CoreRoutesModule = /** @class */ (function () {
         })
     ], CoreRoutesModule);
     return CoreRoutesModule;
-}());
-
-
-
-/***/ }),
-
-/***/ "./src/app/core/services/auth-guard.service.ts":
-/*!*****************************************************!*\
-  !*** ./src/app/core/services/auth-guard.service.ts ***!
-  \*****************************************************/
-/*! exports provided: AuthGuardService */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AuthGuardService", function() { return AuthGuardService; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
-/* harmony import */ var dlv_ng_auth__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! dlv-ng-auth */ "./node_modules/dlv-ng-auth/dlv-ng-auth.module.js");
-var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (undefined && undefined.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-var AuthGuardService = /** @class */ (function () {
-    function AuthGuardService(auth, router) {
-        this.auth = auth;
-        this.router = router;
-    }
-    AuthGuardService.prototype.canLoad = function (route) {
-        return this.checkLogin("/" + route.path);
-    };
-    AuthGuardService.prototype.canActivate = function (route, state) {
-        return this.checkLogin(state.url);
-    };
-    AuthGuardService.prototype.canActivateChild = function (route, state) {
-        return this.checkLogin(state.url);
-    };
-    AuthGuardService.prototype.checkLogin = function (url) {
-        var isLoggedIn = this.auth.isAuthenticated();
-        if (url === "/login" && isLoggedIn) {
-            this.navigateTo("dashboard");
-            return true;
-        }
-        else if (url === "/login" && !isLoggedIn) {
-            return true;
-        }
-        else if (isLoggedIn) {
-            return true;
-        }
-        else {
-            this.navigateTo("login");
-            return false;
-        }
-    };
-    AuthGuardService.prototype.navigateTo = function (route) {
-        this.router.navigate(["/" + route], { replaceUrl: true });
-    };
-    AuthGuardService = __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({
-            providedIn: "root"
-        }),
-        __metadata("design:paramtypes", [dlv_ng_auth__WEBPACK_IMPORTED_MODULE_2__["AuthService"], _angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"]])
-    ], AuthGuardService);
-    return AuthGuardService;
 }());
 
 
@@ -1101,23 +797,19 @@ var BroadcasterService = /** @class */ (function () {
 /*!****************************************!*\
   !*** ./src/app/core/services/index.ts ***!
   \****************************************/
-/*! exports provided: AuthGuardService, LoaderService, BroadcasterService, BroadcastService */
+/*! exports provided: LoaderService, BroadcasterService, BroadcastService */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _auth_guard_service__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./auth-guard.service */ "./src/app/core/services/auth-guard.service.ts");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "AuthGuardService", function() { return _auth_guard_service__WEBPACK_IMPORTED_MODULE_0__["AuthGuardService"]; });
+/* harmony import */ var _loader_service__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./loader.service */ "./src/app/core/services/loader.service.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "LoaderService", function() { return _loader_service__WEBPACK_IMPORTED_MODULE_0__["LoaderService"]; });
 
-/* harmony import */ var _loader_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./loader.service */ "./src/app/core/services/loader.service.ts");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "LoaderService", function() { return _loader_service__WEBPACK_IMPORTED_MODULE_1__["LoaderService"]; });
+/* harmony import */ var _broadcaster_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./broadcaster.service */ "./src/app/core/services/broadcaster.service.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "BroadcasterService", function() { return _broadcaster_service__WEBPACK_IMPORTED_MODULE_1__["BroadcasterService"]; });
 
-/* harmony import */ var _broadcaster_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./broadcaster.service */ "./src/app/core/services/broadcaster.service.ts");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "BroadcasterService", function() { return _broadcaster_service__WEBPACK_IMPORTED_MODULE_2__["BroadcasterService"]; });
-
-/* harmony import */ var _broadcast_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./broadcast.service */ "./src/app/core/services/broadcast.service.ts");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "BroadcastService", function() { return _broadcast_service__WEBPACK_IMPORTED_MODULE_3__["BroadcastService"]; });
-
+/* harmony import */ var _broadcast_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./broadcast.service */ "./src/app/core/services/broadcast.service.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "BroadcastService", function() { return _broadcast_service__WEBPACK_IMPORTED_MODULE_2__["BroadcastService"]; });
 
 
 

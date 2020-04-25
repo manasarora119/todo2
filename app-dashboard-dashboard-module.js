@@ -48,7 +48,6 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
-// import { BroadcastService } from "src/app/core/services";
 
 var DashboardComponent = /** @class */ (function () {
     function DashboardComponent(route, toastr, broadcast, router) {
@@ -56,7 +55,7 @@ var DashboardComponent = /** @class */ (function () {
         this.toastr = toastr;
         this.broadcast = broadcast;
         this.router = router;
-        this.noteValue = "Default Hello";
+        this.noteValue = "Hello";
     }
     DashboardComponent.prototype.ngOnInit = function () {
         var _this = this;
@@ -94,7 +93,7 @@ var DashboardComponent = /** @class */ (function () {
                         data_1.push({
                             id: _this.id,
                             time: new Date().valueOf(),
-                            value: _this.noteValue || "Default Hello"
+                            value: _this.noteValue || "Hello"
                         });
                     }
                     localStorage.setItem("data", JSON.stringify(data_1));
@@ -120,7 +119,7 @@ var DashboardComponent = /** @class */ (function () {
                         data_2.push({
                             id: _this.id - 1,
                             time: new Date().valueOf(),
-                            value: _this.noteValue || "Default Hello"
+                            value: _this.noteValue || "Hello"
                         });
                     }
                     localStorage.setItem("data", JSON.stringify(data_2));
@@ -199,15 +198,11 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 };
 
 
-// import { SharedModule } from '@';
 
 
 
-// import { DashboardService ,BroadcastDService } from './services';
 
-// import { NgModule } from '@angular/core';
 
-// import { ReactiveFormsModule } from '@angular/forms';
 
 var DashboardModule = /** @class */ (function () {
     function DashboardModule() {
@@ -225,9 +220,7 @@ var DashboardModule = /** @class */ (function () {
             declarations: [
                 _components__WEBPACK_IMPORTED_MODULE_4__["DashboardComponent"]
             ],
-            providers: [
-            // DashboardService,BroadcastDService
-            ]
+            providers: []
         })
     ], DashboardModule);
     return DashboardModule;
